@@ -19,11 +19,12 @@ class MovieController {
 
     @Get("/")
     List<Movie> index() {
-        []
+        registry.listFavorites()
     }
 
     @Post('/')
     HttpStatus addMovie(MovieRequest movieRequest) {
+        registry.addMovieToFavorites(movieRequest.imdbId)
         HttpStatus.CREATED
     }
 }

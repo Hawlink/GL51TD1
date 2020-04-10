@@ -35,9 +35,9 @@ class MovieControllerSpec extends Specification {
     void "test index"() {
         given:
         Flowable flowable = client.retrieve(HttpRequest.GET("/movie"), Argument.listOf(Movie))
-        def content = flowable.firstElement()
+        def content = flowable.firstElement().blockingGet()
         expect:
-        content.blockingGet() == []
+        content == []
     }
 
     void "test film creation"() {
@@ -45,8 +45,11 @@ class MovieControllerSpec extends Specification {
         HttpResponse response = client.toBlocking().exchange(
                 HttpRequest.POST("/movie", new MovieRequest(imdbId: "aaaaa"))
         )
+        Flowable flowable = client.retrieve(HttpRequest.GET("/movie"), Argument.listOf(Movie))
+        def content = flowable.firstElement().blockingGet()
         expect:
         response.status == HttpStatus.CREATED
+        //content.find(it.title == 'my movie' && it.imdbId == "aaaaa")
     }
 
     @MockBean()
