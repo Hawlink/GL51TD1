@@ -1,7 +1,5 @@
 package gl51.service
 
-import gl51.data.Photo
-
 /**
  * Ceci permet de mettre à jour la base de données
  */
