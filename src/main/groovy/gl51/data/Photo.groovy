@@ -1,7 +1,7 @@
 package gl51.data
 
 /**
- * Class representing a picture
+ * Class representing a pic
  */
 class Photo {
     int id
