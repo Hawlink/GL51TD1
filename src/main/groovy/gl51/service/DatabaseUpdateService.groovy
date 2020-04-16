@@ -1,7 +1,7 @@
 package gl51.service
 
 /**
- * Ceci permet de mettre à jour la base de données
+ * Ceci permet de mettre à jour la base
  */
 interface DatabaseUpdateService {
 
