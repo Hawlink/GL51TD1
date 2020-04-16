@@ -12,3 +12,4 @@
     <ruleset-ref path='rulesets/naming.xml'>
     </ruleset-ref>
 </ruleset>
+<!--codenarc XML-->
