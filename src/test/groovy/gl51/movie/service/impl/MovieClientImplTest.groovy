@@ -15,12 +15,12 @@ class MovieClientImplTest extends Specification {
     @Inject
     MovieClient client
 
-    void "injection should work"() {
+    void "injectionshouldwork"() {
         expect:
         client != null
     }
 
-    void "mocking the call to movie details should work"() {
+    void "mockingthecalltomoviedetailsshouldwork"() {
         when:
         client.getMovieDetail("aaaa")
         then:
@@ -28,7 +28,7 @@ class MovieClientImplTest extends Specification {
     }
 
     @MockBean(MovieClientImpl)
-    MovieClient client() {
+    MovieClient mockClient() {
         Mock(MovieClient)
     }
 
